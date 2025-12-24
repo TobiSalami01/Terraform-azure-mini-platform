@@ -1,23 +1,31 @@
-# Terraform Azure Mini Platform (Free / Trial Friendly)
+# Terraform Azure Mini Platform
 
-This project demonstrates a modular Azure infrastructure built with Terraform, designed to work within **Azure Free / Trial subscription limits** while still reflecting real-world cloud architecture patterns.
+This repository contains a modular Azure infrastructure platform** built with Terraform.  
+It demonstrates how to design, organize, and deploy core cloud infrastructure using real world architectural patterns, with an emphasis on scalability, security, and operational clarity.
 
-## Architecture Overview
+The platform is intentionally designed to be cost efficient and quota aware, making it easy to deploy in constrained environments while remaining fully extensible to larger production workloads.
 
-**Core Components**
-- Resource Group
-- Virtual Network with segmented subnets (app / private)
-- Log Analytics Workspace
-- Storage Account
+---
+
+#Architecture Overview
+
+#Core Infrastructure
+- Azure Resource Group
+- Virtual Network with segmented subnets (application / private)
+- Log Analytics Workspace for centralized monitoring
+- Azure Storage Account
 - Azure Key Vault with access policies
 
-**Application Layer**
-- Azure Storage Static Website (trial-safe)
-- Custom index and 404 pages
-- App Service Plan & Web App included as optional, feature-flagged code (disabled by default due to quota limits)
+#Application Layer
+- Azure Storage Static Website for application hosting
+- Custom `index.html` and `404.html` pages
+- App Service Plan and Linux Web App included as optional, feature-flagged components**, allowing seamless enablement in environments where compute quotas are available
+
+---
+
+#Project Structure
 
 
-## Project Structure
 
 terraform-azure-mini-prod/
 ├── modules/
@@ -34,7 +42,7 @@ terraform-azure-mini-prod/
 ├── .gitignore
 └── README.md
 
-## Key Concepts Demonstrated
+#Key Concepts Demonstrated
 
 - Modular Terraform design
 - Environment separation (dev / prod)
@@ -43,20 +51,20 @@ terraform-azure-mini-prod/
 - Secure handling of secrets with Azure Key Vault
 - Trial-safe application deployment using Azure Storage Static Website
 
-## How to Run (Dev)
+#How to Run (Dev)
 
 cd environments/dev
 terraform init
 terraform plan
 terraform apply
 
-## Notes
+#Notes
 
 - App Service is disabled by default to avoid Azure Free/Trial quota failures.
 - Static Website provides a working endpoint without paid compute.
 - No secrets or state files are committed to GitHub.
 
-## Author
+#Author
 
-Built by **Tobi Salami** as a hands-on Azure + Terraform infrastructure project.
+Built by TOBI SALAMI as a hands-on Azure + Terraform infrastructure project.
 
