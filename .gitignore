@@ -1,0 +1,19 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Azure / Cloud
+.azure/
+.kube/
+
+# OS / Editor
+.DS_Store
+.vscode/
+
+# Secrets
+*.key
+*.pem
+*.env
+
